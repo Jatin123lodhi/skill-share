@@ -9,7 +9,8 @@ import {
 
 router.post("/register", strictAuthRateLimiter, register);
 
-router.post("/login", strictAuthRateLimiter, login);
+// router.post("/login", strictAuthRateLimiter, login);
+router.post("/login", login); // TODO: removed for testing
 
 router.get("/me", authRateLimiter, authMiddleware, getCurrentUser);
 

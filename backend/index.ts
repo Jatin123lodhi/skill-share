@@ -4,10 +4,13 @@ import authRoutes from "./routes/auth";
 import courseRoutes from "./routes/course";
 import userRoutes from "./routes/user";
 import { errorHandler } from "./middlewares/errorHandler";
+import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
+
 
 // Connect to database
 await connectDB();

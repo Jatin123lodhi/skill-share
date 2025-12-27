@@ -3,7 +3,6 @@ import type { NextFunction, Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { User } from "../models/user";
 import { generateToken } from "../utils/jwt";
-import { Enrollment } from "../models/enrollment";
 
 export const register = async (
   req: Request,
@@ -11,7 +10,7 @@ export const register = async (
   next: NextFunction
 ) => {
   try {
-    const { email, password, name, role } = req.body;
+    const { email, password, name, role } = req.body; // TODO: need to remove role
 
     // input validation
     if (!email || !password) {

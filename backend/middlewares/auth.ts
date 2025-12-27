@@ -29,7 +29,6 @@ export const authMiddleware = (
   }
 
   try {
-    console.log(process.env.JWT_SECRET, '------process.env.JWT_SECRET')
     if (!process.env.JWT_SECRET) {
       return res.status(500).json({
         message: "JWT secret not configured",

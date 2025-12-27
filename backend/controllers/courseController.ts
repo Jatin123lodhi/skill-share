@@ -113,7 +113,7 @@ export const enrollInCourse = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { courseId } = req.body;
+  const { courseId } = req.params;
   const userId = req.user?.userId;
   try {
     if (!courseId) {
